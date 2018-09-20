@@ -15,13 +15,17 @@ npm install --save react-botui
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-botui'
+import BotUI from 'react-botui'
 
 class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
+  componentDidMount() {
+    const botui = new window.BotUI('botui-app')
+
+    botui.message.bot({ delay: 200, content: 'hello' })
+  }
+
+  render() {
+    return <BotUI id="botui-app" />
   }
 }
 ```
