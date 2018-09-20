@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save react-botui
+npm install --save @gmpetrov/react-botui
 ```
 
 ## Usage

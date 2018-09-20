@@ -1,5 +1,5 @@
 {
-  "name": "react-botui",
+  "name": "@gmpetrov/react-botui",
   "version": "1.0.0",
   "description": "Simple wrapper around botui",
   "author": "gmpetrov",
