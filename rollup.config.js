@@ -1,5 +1,6 @@
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
+import legacy from 'rollup-plugin-legacy'
 import external from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
 import resolve from 'rollup-plugin-node-resolve'
@@ -24,14 +25,23 @@ export default {
   plugins: [
     external(),
     postcss({
-      modules: true
+      // modules: true
+      sourceMap: true, // true, "inline" or false
+      extract: 'dist/style.css'
     }),
     url(),
     babel({
       exclude: 'node_modules/**',
-      plugins: [ 'external-helpers' ]
+      plugins: ['external-helpers']
     }),
-    resolve(),
-    commonjs()
+    resolve({
+      jsnext: true,
+      main: true,
+      browser: true
+    }),
+    commonjs(),
+    legacy({
+      'node_modules/botui/build/botui.min.js': 'BotUI'
+    })
   ]
 }

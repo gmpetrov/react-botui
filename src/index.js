@@ -1,22 +1,15 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 
-import styles from './styles.css'
+import './vue-global'
+import BotUI from 'botui' // eslint-disable-line
 
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
+import '../node_modules/botui/build/botui.min.css'
+import '../node_modules/botui/build/botui-theme-default.css'
 
-  render() {
-    const {
-      text
-    } = this.props
+const BotUIComponent = ({ id }) => (
+  <div id={id || 'botui'}>
+    <bot-ui />
+  </div>
+)
 
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
-}
+export default BotUIComponent
