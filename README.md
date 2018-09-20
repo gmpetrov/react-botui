@@ -15,7 +15,7 @@ npm install --save @gpetrov/react-botui
 ```jsx
 import React, { Component } from 'react'
 
-import BotUI from 'react-botui'
+import BotUI from '@gpetrov/react-botui'
 
 class Example extends Component {
   componentDidMount() {
